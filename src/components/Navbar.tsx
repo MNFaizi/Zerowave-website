@@ -5,7 +5,7 @@ const navLinks = [
     { name: 'Home', link: '/' },
     { name: 'Project', link: '/portofolio' },
     { name: 'Documentation', link: 'https://docs.zerowave.my.id' },
-    { name: 'Contact', link: '/contact' }
+    { name: 'Explorer', link: '/explorer' }
 ]
 export default function Navbar() {
     return (
