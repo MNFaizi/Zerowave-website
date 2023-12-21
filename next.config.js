@@ -12,7 +12,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "www.google.com",
+        hostname: "png.pngtree.com",
       },
     ],
   },
