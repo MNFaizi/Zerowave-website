@@ -19,7 +19,7 @@ export default function SocialDiv() {
             <div className="flex mx-6 my-4">
                 {socialLinks.map((social) => {
                     return (
-                        <div key={social.name} className="p-3 bg-zero-main rounded-full transition m-3 hover:scale-125">
+                        <div key={social.name} className="p-3 bg-zero-main rounded-full transition m-0.5 lg:m-3 hover:scale-125">
                             <Link href={social.link} target="_blank">
                                 <FontAwesomeIcon icon={social.icon} size="2x" color="white"/>
                             </Link>

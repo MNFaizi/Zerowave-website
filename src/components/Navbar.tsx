@@ -1,17 +1,12 @@
 import Image from "next/image"
 import Link from "next/link"
+import NavLink from "./NavLink"
 
-const navLinks = [
-    { name: 'Home', link: '/' },
-    { name: 'Project', link: '/portofolio' },
-    { name: 'Documentation', link: 'https://docs.zerowave.my.id' },
-    { name: 'Explorer', link: '/explorer' }
-]
 export default function Navbar() {
     return (
         <>
-            <nav className="sticky top-2 my-4 container">
-                <div className="flex flex-wrap items-center justify-between">
+            <nav className="sticky top-7 my-7">
+                <div className="flex flex-wrap items-center justify-between mx-3 lg:px-24">
                     <div className="flex items-center">
                         <Link href="/">
                             <Image
@@ -25,15 +20,7 @@ export default function Navbar() {
                             <span className="mx-2 text-3xl font-semibold text-zero-secondary">ZeroWave</span>
                         </Link>
                     </div>
-                    <ul className="flex flex-wrap font-medium">
-                        {navLinks.map((navlink, index) => {
-                            return (
-                                <li key={index} className="px-4">
-                                    <Link href={navlink.link} className="text-xl text-zero-main">{navlink.name}</Link>
-                                </li>
-                            )
-                        })}
-                    </ul>
+                    <NavLink/>
                 </div>
             </nav>
         </>

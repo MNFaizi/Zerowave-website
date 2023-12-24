@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faHandHoldingDollar, faServer, faShieldHalved, faNetworkWired } from "@fortawesome/free-solid-svg-icons"
+import MotionDiv from "../animation/div"
 library.add(faHandHoldingDollar, faServer, faShieldHalved, faNetworkWired)
 
 const whyDescripstions = [
@@ -13,17 +14,21 @@ const whyDescripstions = [
 export default function WhyStakeUs() {
     return (
         <>
-            <div className="container m-4">
-                <div className="grid grid-cols-4">
+            <div className="container m-4 flex items-center">
+                <div className="lg:grid lg:grid-cols-4">
                     {whyDescripstions.map((whyDescripstion, index) => {
                         return (
-                            <div key={index} className="flex flex-col items-center m-2 bg-zero-main rounded-3xl bg-opacity-80">
-                                <div className="m-2">
-                                    <FontAwesomeIcon icon={whyDescripstion.icon} size="3x" color="#ffff"/>
-                                </div>
-                                <span className="text-center font-medium p-2">
-                                    {whyDescripstion.description}
-                                </span>
+                            <div key={index}>
+                                <MotionDiv index={index}>
+                                    <div className="flex flex-col lg:h-40 items-center m-2 bg-zero-main rounded-3xl bg-opacity-80">
+                                    <div className="m-2">
+                                        <FontAwesomeIcon icon={whyDescripstion.icon} size="3x" color="#ffff" />
+                                    </div>
+                                    <span className="text-center font-medium p-2">
+                                        {whyDescripstion.description}
+                                    </span>
+                                    </div>
+                                </MotionDiv>
                             </div>
                         )
                     })

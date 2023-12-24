@@ -8,7 +8,7 @@ export default function MotionDiv({children, index} : {children : React.ReactNod
                 animate= {{opacity: 1}}
                 transition={{
                     ease: 'linear',
-                    duration : 1,
+                    duration : 0.5,
                     delay: index * 0.2
                 }}
                 initial= {{opacity: 0}}

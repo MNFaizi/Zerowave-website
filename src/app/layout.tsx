@@ -26,7 +26,7 @@ export default function RootLayout({
         <link rel="icon" href="/Zerowave-Crop.png" />
       </head>
       <body className={inter.className}>
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-screen text-center">
           <Navbar />
           {children}
           <Footer />
