@@ -35,8 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-#posts content
-/src/posts/*
-
 #gitignore
 .gitignore
