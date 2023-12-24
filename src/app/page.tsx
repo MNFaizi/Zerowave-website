@@ -1,4 +1,3 @@
-import MotionDiv from '@/components/animation/div'
 import SocialDiv from '@/components/home/SocialDiv'
 import WhyStakeUs from '@/components/home/WhyStake'
 import Image from 'next/image'

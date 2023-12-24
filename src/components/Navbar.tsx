@@ -2,12 +2,6 @@ import Image from "next/image"
 import Link from "next/link"
 import NavLink from "./NavLink"
 
-const navLinks = [
-    { name: 'Home', link: '/' },
-    { name: 'Project', link: '/portofolio' },
-    { name: 'Documentation', link: 'https://docs.zerowave.my.id' },
-    { name: 'Explorer', link: '/explorer' }
-]
 export default function Navbar() {
     return (
         <>
