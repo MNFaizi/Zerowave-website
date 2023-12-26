@@ -15,9 +15,9 @@ export function getProject(){
         const fileContens = fs.readFileSync(fullPath, 'utf-8')
         const { data } = matter(fileContens)
         // destructering from data matter
-        const { project_name,logo_url, docs_url, stake_url, tags, mainnet } = data
+        const { project_name,logo_url, docs_url, stake_url, tags, mainnet, active } = data
         // return all value 
-        return { name, project_name,logo_url,  docs_url, stake_url, tags, mainnet } 
+        return { name, project_name,logo_url,  docs_url, stake_url, tags, mainnet, active } 
     })
     return fileNamesData.sort((a, b) => {
         if(a.mainnet){
