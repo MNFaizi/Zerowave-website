@@ -5,4 +5,5 @@ docs_url : 'https://docs.zerowave.my.id/mainnet/forta'
 stake_url : 'https://app.forta.network/nodePool/379/'
 tags: 'security'
 mainnet: true
+active: true
 ---

@@ -5,4 +5,5 @@ docs_url : 'https://docs.zerowave.my.id/testnet/dusk'
 stake_url : ''
 tags: 'web3'
 mainnet: false
+active: false
 ---
