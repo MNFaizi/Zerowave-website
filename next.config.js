@@ -14,6 +14,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "png.pngtree.com",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.builder.io",
+      },
     ],
   },
 };

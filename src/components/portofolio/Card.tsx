@@ -11,6 +11,7 @@ export interface ProjectProp {
     stake_url: string;
     tags: string;
     mainnet: boolean;
+    active : boolean;
 }
 interface Prop {
     project: ProjectProp,
@@ -32,7 +33,8 @@ export default async function ProjectCard({ project, index }: Prop) {
                         />
                     </div>
                     <h3 className="text-2xl font-bold my-2">{project.project_name}</h3>
-                    <div className="my-8">
+                        <h3 className={project.active ? "text-zero-main" : "text-zero-main-opposite"}>{project.active ? "Active" : "Non-Active"}</h3>
+                    <div className="my-4">
                         <Link href={project.docs_url} target="_blank" className="mx-4">
                             <button className="bg-zero-secondary bg-opacity-20 rounded-xl h-8 w-16 font-medium transition hover:scale-125">Docs</button>
                         </Link>
