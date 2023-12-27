@@ -4,6 +4,6 @@ logo_url : 'https://cdn.builder.io/api/v1/image/assets%2F580ff9284d33405f94bd899
 docs_url : 'https://docs.zerowave.my.id/testnet/deinfra'
 stake_url : ''
 tags: 'web3'
-mainnet: false
+mainnet: true
 active : false
 ---
