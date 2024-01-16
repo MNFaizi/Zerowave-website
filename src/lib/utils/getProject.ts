@@ -19,12 +19,18 @@ export function getProject(){
         // return all value 
         return { name, project_name,logo_url,  docs_url, stake_url, tags, mainnet, active } 
     })
-    return fileNamesData.sort((a, b) => {
+    return fileNamesData.sort((a) => {
         if(a.mainnet){
-            return -1
+            if(a.active){
+                return -1;
+            }
+            return 1
         }
         else {
-            return 1
+            if(a.active){
+                return -1
+            }
+           return 1
         }
     })
 }
