@@ -18,6 +18,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "cdn.builder.io",
       },
+      {
+        protocol: "https",
+        hostname: "pbs.twimg.com"
+      }
     ],
   },
   output : 'standalone',
