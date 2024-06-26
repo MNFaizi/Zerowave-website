@@ -8,10 +8,10 @@ export async function GET () {
     try {
         await connectMongo();
         const project = await Project.find();
-        return NextResponse.json({data: project});
+        return NextResponse.json({success: true, data: project});
     } catch (error) {
         console.log(error)
-        return NextResponse.json({error});
+        return NextResponse.json({success: false, error});
     }
 }
 export async function POST (req : NextRequest) {
@@ -23,16 +23,17 @@ export async function POST (req : NextRequest) {
             if(data){
                 const insertProject = await Project.create(data);
                 return NextResponse.json({
+                    success: true,
                     message: "Project created successfully",
                     insertProject,
                 });
             }
-            return NextResponse.json({message: 'Project is missing'})
+            return NextResponse.json({success: false, message: 'Project is missing'})
         }
-        return NextResponse.json({message: 'Unauthorized'})
+        return NextResponse.json({success: false,message: 'Unauthorized'})
     }
     catch(error){
         console.log(error)
-        return NextResponse.json({message : "Internal Server Error"})
+        return NextResponse.json({success: false, message : "Internal Server Error"})
     }
 }

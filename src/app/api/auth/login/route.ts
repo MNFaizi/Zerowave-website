@@ -11,15 +11,15 @@ export async function POST (req: NextRequest){
         await connectMongo()
         const checkUser = await User.findOne({email: data.email})
         if(!checkUser){
-            return NextResponse.json({message : "User Not Found"}) 
+            return NextResponse.json({success : false, message : "User Not Found"}) 
         }
         const checkPassword = await bcrypt.compare(data.password, checkUser.password);
         if(!checkPassword){
-            return NextResponse.json({message: "Invalid Credential"})
+            return NextResponse.json({success : false, message: "Invalid Credential"})
         }
         const token = jwt.sign({email: checkUser.email}, process.env.JWT_SECRET as string, {expiresIn: '6h'})
-        return NextResponse.json({message: 'Login Succesfull', 'token' : token})
+        return NextResponse.json({sucess : true, message: 'Login Succesfull', 'token' : token})
     } catch (error) {
-        return NextResponse.json({message: "Internal Server Error"})
+        return NextResponse.json({success: false, message: "Internal Server Error"})
     }
 }

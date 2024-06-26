@@ -11,17 +11,17 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
             await connectMongo();
             const getProject = await Project.findById(params.id);
             if (!getProject) {
-                return NextResponse.json({ message: "Project Not Found" });
+                return NextResponse.json({success: false, message: "Project Not Found" });
             }
             const newData: project = await req.json();
             getProject.active = newData.active;
             getProject.save()
-            return NextResponse.json({ message: `${getProject.project_name} Success Updated`, getProject })
+            return NextResponse.json({success: true, message: `${getProject.project_name} Success Updated`, getProject })
         }
-        return NextResponse.json({ message: "Unauthorized" })
+        return NextResponse.json({success: false,  message: "Unauthorized" })
     }
     catch (error) {
         console.log(error)
-        return NextResponse.json({ message: "Internal Server Error" })
+        return NextResponse.json({success: false, message: "Internal Server Error" })
     }
 }

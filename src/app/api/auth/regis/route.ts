@@ -11,8 +11,8 @@ export async function POST (req: NextRequest){
         const hashPassword = await bcrypt.hash(data.password, 10);
         data.password = hashPassword
         const insertData = await User.create(data)
-        return NextResponse.json({message: "User Created"})
+        return NextResponse.json({success : true, message: "User Created"})
     } catch (error) {
-        return NextResponse.json({message: "Internal Server Error"})
+        return NextResponse.json({sucess: false, message: "Internal Server Error"})
     }
 }
