@@ -1,7 +1,7 @@
-import connectMongo from "@/lib/connect";
-import AuthCheck from "@/lib/middleware";
-import Project from "@/lib/project.schema";
-import { project } from "@/lib/type";
+import connectMongo from "@/lib/backend/connect";
+import AuthCheck from "@/lib/backend/middleware";
+import Project from "@/lib/backend/project.schema";
+import { project } from "@/lib/backend/type";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function PUT(req: NextRequest, { params }: { params: { id: string } }) {
@@ -21,6 +21,7 @@ export async function PUT(req: NextRequest, { params }: { params: { id: string }
         return NextResponse.json({ message: "Unauthorized" })
     }
     catch (error) {
+        console.log(error)
         return NextResponse.json({ message: "Internal Server Error" })
     }
 }

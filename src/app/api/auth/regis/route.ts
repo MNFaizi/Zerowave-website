@@ -1,6 +1,6 @@
-import connectMongo from "@/lib/connect";
-import User from "@/lib/user.schema";
-import { user } from "@/lib/type";
+import connectMongo from "@/lib/backend/connect";
+import User from "@/lib/backend/user.schema";
+import { user } from "@/lib/backend/type";
 import { NextRequest, NextResponse } from "next/server";
 import bcrypt from 'bcrypt'
 
