@@ -1,5 +1,5 @@
 export type project = {
-    id: string;
+    id?: string;
     project_name: string;
     logo_url: string,
     docs_url: string,
