@@ -1,6 +1,8 @@
 import ProjectCard, { ProjectProp } from "@/components/portofolio/Card";
 import { getProject} from "@/lib/utils/getProject";
 
+export const dynamic = 'force-dynamic';
+
 export default async function Portofolio() {
     const datas = await getProject()
     return (
