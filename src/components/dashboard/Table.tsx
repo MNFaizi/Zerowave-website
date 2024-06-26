@@ -1,10 +1,8 @@
 'use client'
 import { project } from "@/lib/backend/type";
-import { useRouter } from "next/navigation";
 import { getToken } from "@/lib/utils/getToken";
 
 export default function Table(data : any) {
-    const router = useRouter();
     const token = getToken();
     const handleUpdate = async (event : boolean, id : string) => {
         const res = await fetch(`http://localhost:3000/api/projects/${id}`, {
