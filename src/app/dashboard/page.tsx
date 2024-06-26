@@ -1,4 +1,5 @@
 "use client"
+import ModalAddProject from '@/components/dashboard/ModalAddProject'
 import SideAdmin from '@/components/dashboard/Sidebar'
 import Table from '@/components/dashboard/Table'
 import { getProject } from '@/lib/utils/getProject'
@@ -8,21 +9,23 @@ import { useEffect, useState } from 'react'
 
 
 export default function Dashboard() {
-    const router = useRouter()
+    const router = useRouter();
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const token = getToken();
+
     useEffect(() => {
+        if(!token){
+            router.push('/')
+        }
         getProject()
             .then((res) => {
                 setData(res)
                 setLoading(false)
             })
             .catch((err) => console.log(err))
-    }, [])
-    if(!token){
-        router.push('/')
-    }
+    }, [router, token])
+    
     return (
         <div className='flex h-screen'>
             <SideAdmin />
@@ -33,15 +36,7 @@ export default function Dashboard() {
                             <h2 className="text-2xl font-medium ">Projects</h2>
                             <span className="px-3 py-1 text-sm text-white bg-zero-main rounded-full">{data.length} Projects</span>
                         </div>
-                        <div className='flex items-center mt-4 gap-3'>
-                            <button className="flex items-center justify-center w-1/2 px-5 py-2 text-sm tracking-wide transition-colors duration-200 bg-zero-main-opposite text-white rounded-lg shrink-0 sm:w-auto gap-x-2 hover:bg-blue-600 dark:hover:bg-blue-500 dark:bg-blue-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-8 h-8">
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-
-                                <span className='text-md'>Add Project</span>
-                            </button>
-                        </div>
+                        <ModalAddProject />
                     </div>
                     <div className='mt-6 md:flex md:items-center md:justify-between'>
                         <div className="inline-flex overflow-hidden bg-white border divide-x rounded-lg dark:bg-gray-900 rtl:flex-row-reverse dark:border-gray-700 dark:divide-gray-700">
