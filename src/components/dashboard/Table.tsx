@@ -2,7 +2,7 @@
 import { project } from "@/lib/backend/type";
 import { getToken } from "@/lib/utils/getToken";
 
-export default function Table(data : any) {
+export default function Table(data: any) {
     const token = getToken();
     const handleUpdate = async (event : boolean, id : string) => {
         const res = await fetch(`http://localhost:3000/api/projects/${id}`, {
@@ -43,7 +43,7 @@ export default function Table(data : any) {
                                         defaultChecked={data.active}
                                         onClick={(e) => {
                                             if(e.target instanceof HTMLInputElement){
-                                                handleUpdate(e.target.checked, data.id)
+                                                handleUpdate(e.target.checked, data.id!)
                                             }
                                         }}
                                     />
