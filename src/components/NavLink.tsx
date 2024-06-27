@@ -5,7 +5,7 @@ import { useState } from "react"
 
 const navLinks = [
     { name: 'Home', link: '/' },
-    { name: 'Project', link: '/portofolio' },
+    { name: 'Project', link: '#portofolio' },
     { name: 'Documentation', link: 'https://docs.zerowave.my.id' },
     { name: 'Explorer', link: '/explorer' }
 ]
