@@ -6,6 +6,7 @@ import { getProject } from '@/lib/utils/getProject'
 import { getToken } from '@/lib/utils/getToken'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
+import Loading from '../loading'
 
 
 export default function Dashboard() {
@@ -57,7 +58,7 @@ export default function Dashboard() {
                         <div className='-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8'>
                             <div className='inline-block min-w-full py-2 align-middle md:px-6 lg:px-8'>
                                 <div className='overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg'>
-                                    {loading ? <div>loading</div> : <Table data={data} />}
+                                    {loading ? <Loading/> : <Table data={data} />}
                                 </div>
                             </div>
                         </div>
