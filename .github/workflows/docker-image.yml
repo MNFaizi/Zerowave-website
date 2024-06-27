@@ -7,6 +7,10 @@ on:
 jobs:
   build:
     runs-on: ['self-hosted', 'Linux', 'X64']
+    env:
+      MONGO_URI: ${{vars.MONGO_URI}}
+      USER_MAIL: ${{vars.USER_MAIL}}
+      JWT_SECRET: ${{secrets.JWT_SECRET}}
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
