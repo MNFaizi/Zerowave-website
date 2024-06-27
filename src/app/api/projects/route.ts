@@ -4,6 +4,8 @@ import { NextRequest, NextResponse } from 'next/server'
 import { project } from '@/lib/backend/type';
 import AuthCheck from '@/app/middleware';
 
+export const dynamic = "force-dynamic";
+
 export async function GET () {
     try {
         await connectMongo();
