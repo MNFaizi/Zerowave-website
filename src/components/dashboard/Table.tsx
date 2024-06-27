@@ -5,7 +5,7 @@ import { getToken } from "@/lib/utils/getToken";
 export default function Table(data: any) {
     const token = getToken();
     const handleUpdate = async (event : boolean, id : string) => {
-        const res = await fetch(`http://localhost:3000/api/projects/${id}`, {
+        const res = await fetch(`/api/projects/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
