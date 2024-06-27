@@ -7,7 +7,7 @@ export default async function Portofolio() {
     const datas = await getProject()
     return (
         <>
-            <div className=" container text-center">
+            <div className="container text-center" id="portofolio">
                 <h1 className="text-4xl font-bold my-2">Portofolio Page</h1>
                 <p className='text-xl text-opacity-40'>This is a collection of projects that I supported. You can find the source code and more information</p>
             </div>
