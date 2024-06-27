@@ -1,7 +1,7 @@
 import { project } from "../backend/type";
 
 export async function addProject (token: string | null, data : project) {
-    const response = await fetch('http://localhost:3000/api/projects', {
+    const response = await fetch('/api/projects', {
         method: 'POST',
         headers : {
             'Content-Type' : 'application/json',
