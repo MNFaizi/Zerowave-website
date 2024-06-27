@@ -18,6 +18,7 @@ const config: Config = {
       'zero-main' : '#35adb1',
       'zero-main-opposite' : '#b14745',
       'zero-secondary' : '#005a60',
+      'white' : '#ffff'
     },
     container: {
       'center' : true
