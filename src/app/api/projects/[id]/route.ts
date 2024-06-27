@@ -1,5 +1,5 @@
 import connectMongo from "@/lib/backend/connect";
-import AuthCheck from "@/lib/backend/middleware";
+import AuthCheck from "@/app/middleware";
 import Project from "@/lib/backend/project.schema";
 import { project } from "@/lib/backend/type";
 import { NextRequest, NextResponse } from "next/server";

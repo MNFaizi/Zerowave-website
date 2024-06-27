@@ -2,7 +2,7 @@ import Project from '@/lib/backend/project.schema'
 import connectMongo from '@/lib/backend/connect'
 import { NextRequest, NextResponse } from 'next/server'
 import { project } from '@/lib/backend/type';
-import AuthCheck from '@/lib/backend/middleware';
+import AuthCheck from '@/app/middleware';
 
 export async function GET () {
     try {

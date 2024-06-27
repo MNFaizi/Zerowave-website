@@ -17,7 +17,7 @@ const AuthCheck = async (req: Request) => {
     } 
 }
 export const config = {
-    matcher: ['/((?!api|_next/static|_next/image|.*\\.png$).*)']
+    matcher: ['/api/projects/:path*']
 }
 
 export default AuthCheck;
