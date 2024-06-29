@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 export async function GET () {
     try {
         await connectMongo();
-        const project = await Project.find();
+        const project = await Project.find().sort({"mainnet" : -1, "active" : -1, "createdAt" : -1});
         return NextResponse.json({success: true, data: project});
     } catch (error) {
         console.log(error)
